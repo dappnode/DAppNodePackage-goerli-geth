@@ -1,0 +1,33 @@
+{
+  "name": "geth-gorli.public.dappnode.eth",
+  "version": "0.1.0",
+  "description": "A cross-client proof-of-authority ethereum testnet",
+  "avatar": "",
+  "type": "library",
+  "image": {
+    "path": "",
+    "hash": "",
+    "size": "",
+    "restart": "always",
+    "volumes": [
+      "gorli:/goerli"
+    ],
+    "ports": [
+      "53535:30303",
+      "53535:30303/udp",
+      "53534:30304/udp"
+    ],
+    "keywords": [
+      "ethereum",
+      "testnet",
+      "geth",
+      "gorli"
+    ]
+  },
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "contributors": [
+    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
+    "Stefaan Ponnet (https://github.com/sponnet)"
+  ],
+  "license": "GPL-3.0"
+}
