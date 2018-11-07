@@ -1,5 +1,5 @@
 {
-  "name": "geth-gorli.public.dappnode.eth",
+  "name": "geth-gorli.dnp.dappnode.eth",
   "version": "0.1.0",
   "description": "A cross-client proof-of-authority ethereum testnet",
   "avatar": "avatar.jpg",
@@ -10,7 +10,7 @@
     "size": "",
     "restart": "always",
     "volumes": [
-      "gorli:/goerli"
+      "goerli:/goerli"
     ],
     "ports": [
       "53535:30303",

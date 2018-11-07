@@ -1,7 +1,7 @@
 version: '3.4'
 services:
-    geth-gorli.public.dappnode.eth:
-        image: 'geth-gorli.public.dappnode.eth:0.1.0'
+    geth-gorli.dnp.dappnode.eth:
+        image: 'geth-gorli.dnp.dappnode.eth:0.1.0'
         build: ./build
         volumes:
             - 'gorli:/goerli'
