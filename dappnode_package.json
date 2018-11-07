@@ -2,7 +2,7 @@
   "name": "geth-gorli.public.dappnode.eth",
   "version": "0.1.0",
   "description": "A cross-client proof-of-authority ethereum testnet",
-  "avatar": "",
+  "avatar": "avatar.jpg",
   "type": "library",
   "image": {
     "path": "",
