@@ -2,13 +2,16 @@
 
 [![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.admin.dnp.dappnode.eth/#/installer/goerli-geth.dnp.dappnode.eth)
 
+
+[![Görli github](https://img.shields.io/badge/Goerli-Github-blue.svg)](https://github.com/goerli/testnet)
+[![Görli gitter](https://img.shields.io/badge/Goerli-Gitter-753a88.svg)](https://gitter.im/goerli/testnet )
+[![Görli gitter](https://img.shields.io/badge/DAppNode-Github-blue.svg)](https://github.com/dappnode/DAppNode)
+
 Implements the install instructions for the Görli testnet as a DAppNode package
 
-- https://github.com/goerli/testnet
-- https://dappnode.io/
+<p align="center"><img src="install.gif?raw=true"/></p>
 
 You can use this package without installing it in your dappnode following these instructions:
-
 
 ## Prerequisites
 
