@@ -5,6 +5,8 @@ Implements the install instructions for the Görli testnet as a DAppNode package
 - https://github.com/goerli/testnet
 - https://dappnode.io/
 
+You can use this package without installing it in your dappnode following these instructions:
+
 
 ## Prerequisites
 
@@ -40,6 +42,28 @@ Implements the install instructions for the Görli testnet as a DAppNode package
 ### Stop
 
 `docker-compose down`
+
+## Extra options
+
+You can edit the `docker-compose.yml` and add extra options, such as:
+```
+ - EXTRA_OPTS=--wsapi "db,eth,net,ssh,miner,web3,personal,admin"
+```
+
+## Connect using web3js
+
+If the package is running and you're connected to your dappnode you can use:
+```
+var Web3 = require('web3');
+var web3 = new Web3('ws://my.geth-goerli.dnp.dappnode.eth:8546')
+web3.eth.getBlockNumber().then(console.log)
+```
+In case you are running it locally:
+```
+var Web3 = require('web3');
+var web3 = new Web3('ws://127.0.0.1:8546')
+web3.eth.getBlockNumber().then(console.log)
+```
 
 ## Note
 

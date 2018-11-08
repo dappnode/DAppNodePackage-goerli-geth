@@ -1,12 +1,12 @@
 version: '3.4'
 services:
-    geth-gorli.dnp.dappnode.eth:
-        image: 'geth-gorli.dnp.dappnode.eth:0.1.0'
+    geth-goerli.dnp.dappnode.eth:
+        image: 'geth-goerli.dnp.dappnode.eth:0.1.0'
         build: ./build
         volumes:
-            - 'gorli:/goerli'
+            - 'goerli:/goerli'
         environment: 
-            - OPTS=--unlock 0x94bee20ac9b9645d533a0bdf14feb7bc8cdfce30 --password /goerli/password.txt
+            - EXTRA_OPTS=
         ports:
             - '127.0.0.1:8546:8546'
             - '127.0.0.1:8545:8545'
@@ -14,4 +14,4 @@ services:
             - '53535:30303/udp'
             - '53534:30304/udp'
 volumes:
-    gorli: {}
+    goerli: {}

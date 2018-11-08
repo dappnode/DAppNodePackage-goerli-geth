@@ -18,9 +18,9 @@ RUN cat /usr/src/app/testnet/bootnodes.txt | jq -R '[.]' | jq -s 'add' > /goerli
 # Pull Geth into a second stage deploy alpine container
 FROM alpine:latest
 
-RUN apk add --no-cache ca-certificates nodejs npm
+RUN apk add --no-cache ca-certificates
 COPY --from=builder /usr/src/app/go-ethereum/build/bin/geth /usr/local/bin/
 COPY --from=builder /goerli /goerli 
 
 EXPOSE 30303 30303/udp 30304/udp
-ENTRYPOINT geth --datadir /goerli --rpc --rpccorsdomain "*" --rpcaddr="0.0.0.0" --rpcvhosts "*" --ws --wsaddr="0.0.0.0" --wsorigins="*" --networkid=6284
+ENTRYPOINT geth --datadir /goerli --rpc --rpccorsdomain "*" --rpcaddr="0.0.0.0" --rpcvhosts "*" --ws --wsaddr="0.0.0.0" --wsorigins="*" --networkid=6284 $EXTRA_OPTS

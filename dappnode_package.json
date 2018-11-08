@@ -1,8 +1,8 @@
 {
-  "name": "geth-gorli.dnp.dappnode.eth",
+  "name": "geth-goerli.dnp.dappnode.eth",
   "version": "0.1.0",
-  "description": "A cross-client proof-of-authority ethereum testnet",
-  "avatar": "avatar.jpg",
+  "description": "Geth version of the Görli Testnet. A cross-client proof-of-authority ethereum testnet",
+  "avatar": "avatar.png",
   "type": "library",
   "image": {
     "path": "",
@@ -11,6 +11,9 @@
     "restart": "always",
     "volumes": [
       "goerli:/goerli"
+    ],
+    "environment": [
+      "EXTRA_OPTS"
     ],
     "ports": [
       "53535:30303",
@@ -21,7 +24,8 @@
       "ethereum",
       "testnet",
       "geth",
-      "gorli"
+      "goerli",
+      "poa"
     ]
   },
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
@@ -29,5 +33,15 @@
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)"
   ],
+  "homepage": {
+    "homepage": "https://github.com/dappnode/DAppNodePackage-geth-goerli#readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dappnode/DAppNodePackage-geth-goerli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-geth-goerli/issues"
+  },
   "license": "GPL-3.0"
 }
