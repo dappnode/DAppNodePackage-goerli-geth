@@ -19,19 +19,19 @@
       "53535:30303",
       "53535:30303/udp",
       "53534:30304/udp"
-    ],
-    "keywords": [
-      "ethereum",
-      "testnet",
-      "geth",
-      "goerli",
-      "poa"
     ]
   },
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)"
+  ],
+  "keywords": [
+    "ethereum",
+    "testnet",
+    "geth",
+    "goerli",
+    "poa"
   ],
   "homepage": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme"
