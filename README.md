@@ -1,5 +1,7 @@
 # Görli testnet DAppnode package
 
+[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.admin.dnp.dappnode.eth/#/installer/ipfs:QmW6M4r63R2RStb4cwJpAZo8ryuy24uZ9WQjAmctt46eDz)
+
 Implements the install instructions for the Görli testnet as a DAppNode package
 
 - https://github.com/goerli/testnet
