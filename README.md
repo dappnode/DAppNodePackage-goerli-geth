@@ -5,10 +5,14 @@
 Implements the install instructions for the Görli testnet as a DAppNode package
 
 - https://github.com/goerli/testnet
+- https://gitter.im/goerli/testnet 
 - https://dappnode.io/
 
-You can use this package without installing it in your dappnode following these instructions:
+## DEMO
 
+<p align="center"><img src="install.gif?raw=true"/></p>
+
+You can use this package without installing it in your dappnode following these instructions:
 
 ## Prerequisites
 
