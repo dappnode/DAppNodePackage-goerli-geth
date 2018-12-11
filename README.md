@@ -73,3 +73,7 @@ web3.eth.getBlockNumber().then(console.log)
 ## Note
 
 This is early stage software - the testnet is not operational yet
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
