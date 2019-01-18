@@ -1,4 +1,4 @@
-# Görli testnet DAppnode package
+# Görli testnet DAppNode package
 
 [![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.admin.dnp.dappnode.eth/#/installer/goerli-geth.dnp.dappnode.eth)
 
