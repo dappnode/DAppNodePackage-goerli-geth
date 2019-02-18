@@ -1,15 +1,11 @@
 version: '3.4'
 services:
     goerli-geth.dnp.dappnode.eth:
-        image: 'goerli-geth.dnp.dappnode.eth:0.1.0'
+        image: 'goerli-geth.dnp.dappnode.eth:0.2.0'
         build: ./build
         volumes:
             - 'goerli:/goerli'
-        environment: 
-            - EXTRA_OPTS=
         ports:
-            - '127.0.0.1:8546:8546'
-            - '127.0.0.1:8545:8545'
             - '53535:30303'
             - '53535:30303/udp'
             - '53534:30304/udp'
