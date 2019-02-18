@@ -7,14 +7,14 @@
   "chain": "ethereum",
   "image": {
     "path": "goerli-geth.dnp.dappnode.eth_0.2.0.tar.xz",
-    "hash": "/ipfs/QmXEVvqUpoFDC3QbMRj5QQH9PSDcPHqiTVhnN2Wnh6HoYC",
-    "size": 14850092,
+    "hash": "/ipfs/QmXUMfoHhq69iMBjfcGHEBFxQUopB6LaWXCN4aKcdhfgZh",
+    "size": 14850956,
     "restart": "always",
     "volumes": [
       "goerli:/goerli"
     ],
     "environment": [
-      "EXTRA_OPTS=--rpc --rpcaddr 0.0.0.0 --rpccorsdomain '*' --rpcvhosts '*' --ws --wsorigins '*' --wsaddr 0.0.0.0"
+      "EXTRA_OPTS"
     ],
     "ports": [
       "53535:30303",
