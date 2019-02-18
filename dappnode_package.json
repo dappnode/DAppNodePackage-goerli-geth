@@ -4,6 +4,7 @@
   "description": "Geth version for Görli Testnet. A cross-client proof-of-authority ethereum testnet",
   "avatar": "avatar.png",
   "type": "library",
+  "chain": "ethereum",
   "image": {
     "path": "",
     "hash": "",
