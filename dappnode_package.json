@@ -14,7 +14,7 @@
       "goerli:/goerli"
     ],
     "environment": [
-      "EXTRA_OPTS=--rpc --rpcaddr 0.0.0.0 --rpccorsdomain '*' --rpcvhosts '*' --ws --wsorigins '*' --wsaddr 0.0.0.0"
+      "EXTRA_OPTS"
     ],
     "ports": [
       "53535:30303",
