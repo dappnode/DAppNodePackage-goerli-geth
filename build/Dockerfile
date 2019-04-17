@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git jq
 
-ARG BRANCH=master
+ARG BRANCH=v1.8.26
 
 RUN git clone -b $BRANCH https://github.com/ethereum/go-ethereum.git
 RUN cd go-ethereum && make geth
@@ -15,4 +15,5 @@ FROM alpine:latest
 
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /usr/src/app/go-ethereum/build/bin/geth /usr/local/bin/
-ENTRYPOINT geth --datadir /goerli --goerli --rpc --rpcaddr 0.0.0.0 --rpccorsdomain '*' --rpcvhosts '*' --ws --wsorigins '*' --wsaddr 0.0.0.0
+
+ENTRYPOINT geth --datadir /goerli --goerli --rpc --rpcaddr 0.0.0.0 --rpccorsdomain "*" --rpcvhosts "*" --ws --wsorigins "*" --wsaddr 0.0.0.0 $EXTRA_OPTS

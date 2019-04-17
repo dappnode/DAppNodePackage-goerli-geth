@@ -1,14 +1,14 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Geth version for Görli Testnet. A cross-client proof-of-authority ethereum testnet",
   "avatar": "/ipfs/QmTfnrUdZWaMgr2Zi1h1Z7zS5CbYtQZRs72yqKZQHj5fxT",
   "type": "library",
   "chain": "ethereum",
   "image": {
-    "path": "goerli-geth.dnp.dappnode.eth_0.2.0.tar.xz",
-    "hash": "/ipfs/QmXUMfoHhq69iMBjfcGHEBFxQUopB6LaWXCN4aKcdhfgZh",
-    "size": 14850956,
+    "path": "",
+    "hash": "",
+    "size": "",
     "restart": "always",
     "volumes": [
       "goerli:/goerli"
