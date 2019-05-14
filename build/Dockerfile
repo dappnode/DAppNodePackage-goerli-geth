@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git jq
 
-ARG BRANCH=v1.8.26
+ARG BRANCH=v1.8.27
 
 RUN git clone -b $BRANCH https://github.com/ethereum/go-ethereum.git
 RUN cd go-ethereum && make geth
