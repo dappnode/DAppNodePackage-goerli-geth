@@ -1,10 +1,11 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
   "version": "0.2.3",
-  "description": "Geth version for Görli Testnet. A cross-client proof-of-authority ethereum testnet",
+  "upstreamVersion": "1.8.27",
+  "shortDescription": "A cross-client PoA testing network for Ethereum",
+  "description": "Geth version for the Görli Testnet. Görli Testnet is the first proof-of-authority cross-client testnet, synching Parity Ethereum, Geth, Nethermind, Pantheon, and EthereumJS. This testnet is a community-based project, completely open-source, naturally. It was born in September 2018 during ETHBerlin and has been growing in contributors ever since. More info [here](https://goerli.net/). \n\n      .---------.\n      |.-------.|\n      ||>run#  ||\n      ||       ||\n      |'-------'|\n    .-^---------^-.\n    |Görli Testnet|\n    '-------------'\n",
   "avatar": "/ipfs/QmTfnrUdZWaMgr2Zi1h1Z7zS5CbYtQZRs72yqKZQHj5fxT",
   "type": "library",
-  "chain": "ethereum",
   "image": {
     "path": "",
     "hash": "",
@@ -22,10 +23,14 @@
       "53534:30304/udp"
     ]
   },
+  "chain": "ethereum",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)"
+  ],
+  "categories": [
+    "Developer tools"
   ],
   "keywords": [
     "ethereum",
@@ -34,12 +39,13 @@
     "goerli",
     "poa"
   ],
-  "homepage": {
-    "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme"
+  "links": {
+    "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme",
+    "api": "http://goerli-geth.dappnode:8545"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-goerli-geth.git"
+    "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth.git"
   },
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth/issues"
