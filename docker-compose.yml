@@ -1,17 +1,16 @@
 version: '3.4'
 services:
-    goerli-geth.dnp.dappnode.eth:
-        image: 'goerli-geth.dnp.dappnode.eth:0.4.0'
-        build: ./build
-        volumes:
-            - 'goerli:/goerli'
-        ports:
-            - '30303'
-            - '30303/udp'
-            - '30304/udp'
-        restart: always
-        environment: 
-            - EXTRA_OPTS=--rpcapi eth,net,web3,txpool
-
+  goerli-geth.dnp.dappnode.eth:
+    image: 'goerli-geth.dnp.dappnode.eth:0.4.2'
+    build: ./build
+    volumes:
+      - 'goerli:/goerli'
+    ports:
+      - '30303'
+      - 30303/udp
+      - 30304/udp
+    restart: always
+    environment:
+      - 'EXTRA_OPTS=--rpcapi eth,net,web3,txpool'
 volumes:
-    goerli: {}
+  goerli: {}
