@@ -1,8 +1,11 @@
 version: '3.4'
 services:
   goerli-geth.dnp.dappnode.eth:
-    image: 'goerli-geth.dnp.dappnode.eth:0.4.2'
-    build: ./build
+    image: 'goerli-geth.dnp.dappnode.eth:0.4.4'
+    build:
+      context: ./build
+      args:
+        - VERSION
     volumes:
       - 'goerli:/goerli'
     ports:
