@@ -13,5 +13,13 @@
       "dappnode": "Fri, 08 Nov 2019 21:34:00 GMT"
     },
     "link": "http://my.dappnode/#/sdk/publish/r=goerli-geth.dnp.dappnode.eth&v=0.4.2&h=%2Fipfs%2FQmcU2Xodanr6otLZyrwcCcfUAdbQs7UBrwHTpd7qNsJTJT"
+  },
+  "0.4.3": {
+    "hash": "/ipfs/QmWAF3Pqbc2D2LuXrTha2v36K4E4SRaQ3uAhpAptkazbX8",
+    "type": "directory",
+    "uploadedTo": {
+      "dappnode": "Wed, 15 Apr 2020 08:23:42 GMT"
+    },
+    "link": "http://my.dappnode/#/sdk/publish/r=goerli-geth.dnp.dappnode.eth&v=0.4.3&h=%2Fipfs%2FQmWAF3Pqbc2D2LuXrTha2v36K4E4SRaQ3uAhpAptkazbX8"
   }
 }
