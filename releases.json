@@ -23,11 +23,11 @@
     "link": "http://my.dappnode/#/sdk/publish/r=goerli-geth.dnp.dappnode.eth&v=0.4.3&h=%2Fipfs%2FQmWAF3Pqbc2D2LuXrTha2v36K4E4SRaQ3uAhpAptkazbX8"
   },
   "0.4.4": {
-    "hash": "/ipfs/QmNogot523WsxnTx6dDxeQCgri4fQi1fV86dZrXpnVMSuH",
+    "hash": "/ipfs/QmeuYAbWEsW9cq7LUqwBoVWSbupEenidypTN2cDHu1ihrH",
     "type": "directory",
     "uploadedTo": {
-      "remote": "Wed, 29 Apr 2020 10:46:15 GMT"
+      "remote": "Wed, 29 Apr 2020 10:53:04 GMT"
     },
-    "link": "http://my.dappnode/#/sdk/publish/r=goerli-geth.dnp.dappnode.eth&v=0.4.4&h=%2Fipfs%2FQmNogot523WsxnTx6dDxeQCgri4fQi1fV86dZrXpnVMSuH"
+    "link": "http://my.dappnode/#/sdk/publish/r=goerli-geth.dnp.dappnode.eth&v=0.4.4&h=%2Fipfs%2FQmeuYAbWEsW9cq7LUqwBoVWSbupEenidypTN2cDHu1ihrH"
   }
 }
