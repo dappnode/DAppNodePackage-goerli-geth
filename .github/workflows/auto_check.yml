@@ -16,7 +16,7 @@ jobs:
       id: get_tag
       run: |
         UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/releases/latest | jq .tag_name | tr -d "\"" )
-        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/latest | jq .tag_name | tr -d "\"" )
+        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/tags/$UPSTREAM_TAG | jq .tag_name | tr -d "\"" )
         if [ $UPSTREAM_TAG != $DNP_TAG ];then
             echo "::set-output name=trigger_update::true"
         fi
