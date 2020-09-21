@@ -1,0 +1,44 @@
+name: "Main"
+on:
+  pull_request:
+    paths:
+      - "build/**"
+  push:
+    branches:
+      - "master"
+      - "v[0-9]+.[0-9]+.[0-9]+"
+    paths:
+      - "build/**"
+      - ".github/workflows/main.yml"
+
+jobs:
+  build-test:
+    runs-on: ubuntu-16.04
+    name: Build test
+    if: github.event_name != 'push'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: docker-compose build
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v3
+        with:
+          buildx-version: latest
+          qemu-version: latest
+      - name: Publish
+        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEVELOPER_ADDRESS: "0xf35960302a07022aba880dffaec2fdd64d5bf1c1"
