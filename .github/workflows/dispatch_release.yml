@@ -26,9 +26,6 @@ jobs:
         with:
           buildx-version: latest
           qemu-version: latest
-
-      - name: dappnodesdk install
-        run: npm install -g @dappnode/dappnodesdk
         
       - name: Get next DAppNodePackage release
         id: next-release
@@ -53,8 +50,9 @@ jobs:
       - name: dappnodesdk publish
         id: dappnodesdk-publish
         run: |
-          sed -i "s/upstreamVersion\":.*,/upstreamVersion\": \"${{ steps.dispatch-event.outputs.TAG }}\",/g" dappnode_package.json 
-          dappnodesdk publish patch -p remote
+          sed -i "s/upstreamVersion\":.*,/upstreamVersion\": \"${{ steps.dispatch-event.outputs.TAG }}\",/g" dappnode_package.json
+          sed -i "s/        - UPSTREAM_VERSION=.*/        - UPSTREAM_VERSION=${{ steps.dispatch-event.outputs.TAG }}/g" docker-compose.yml
+          npx @dappnode/dappnodesdk publish patch -p remote --timeout 2h
           echo "::set-output name=CONTENT_HASH::$(cat ./build_${{ steps.next-release.outputs.DNP_VERSION }}/content-hash | sed 's/\//%2F/g')"
           echo "::set-output name=PACKAGE_NAME::$(cat dappnode_package.json | jq .name | tr -d "\"")"
 
