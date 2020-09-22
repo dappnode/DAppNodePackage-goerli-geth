@@ -40,5 +40,5 @@ jobs:
         run: |
             git config --global user.email "eduadiez@gmail.com"
             git config --global user.name "Eduardo"
-            git commit -am "Github action update"
+            git commit -am "Github action bumped version to ${{ steps.dispatch-event.outputs.TAG }}"
             git push
