@@ -26,26 +26,6 @@ jobs:
         with:
           buildx-version: latest
           qemu-version: latest
-        
-      - name: Get next DAppNodePackage release
-        id: next-release
-        run: echo "::set-output name=DNP_VERSION::$(dappnodesdk next patch -p remote)"
-        
-      - name: Check and delete if a release already exists
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: | 
-          RELEASE_ID=$(curl https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ steps.dispatch-event.outputs.TAG }} | jq .id || echo "") 
-          PRE_RELEASE=$(curl -s https://api.github.com/repos/dappnode/${{ github.repository }}releases/tags/${{ steps.dispatch-event.outputs.TAG }} | jq .prerelease)
-          if [ $PRE_RELEASE == "false" ];then
-            exit 1
-          elif [ ! -z "$RELEASE_ID" ];then
-            curl -H "Authorization: token ${GITHUB_TOKEN}" -X DELETE https://api.github.com/repos/${{ github.repository }}/releases/${RELEASE_ID}
-          fi
-
-      - name: Docker-Compose Build
-        run: |
-          docker-compose build
           
       - name: dappnodesdk publish
         id: dappnodesdk-publish
