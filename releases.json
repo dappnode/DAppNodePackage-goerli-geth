@@ -44,5 +44,12 @@
       "http://ipfs.dappnode.io": "Tue, 22 Sep 2020 13:02:31 GMT"
     },
     "link": "https://dappnode.github.io/sdk-publish/?r=goerli-geth.dnp.dappnode.eth&v=0.4.7&h=%2Fipfs%2FQmUZL81erfT5uVYSjc46nWQD9TrhA8KLzEeosUgeAyLd5u"
+  },
+  "0.4.8": {
+    "hash": "/ipfs/QmdH8eTmtLbC8kLuKTyhkPHxc9Xi6EKpFEqyKT2eXirCUU",
+    "uploadedTo": {
+      "http://ipfs.dappnode.io": "Wed, 23 Sep 2020 01:25:31 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=goerli-geth.dnp.dappnode.eth&v=0.4.8&h=%2Fipfs%2FQmdH8eTmtLbC8kLuKTyhkPHxc9Xi6EKpFEqyKT2eXirCUU"
   }
 }
