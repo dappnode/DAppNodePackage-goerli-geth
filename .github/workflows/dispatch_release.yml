@@ -8,37 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: New remote repository event
-        id: dispatch-event
-        run: |
-          echo "Event '${{ github.event.action }}' with tag: '${{ github.event.client_payload.tag }}'"
-          echo "::set-output name=TAG::${{ github.event.client_payload.tag }}"
-          echo UPSTREAM_VERSION=${{ github.event.client_payload.tag }} > .env
-      
-      - name: Setup nodejs
-        uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: crazy-max/ghaction-docker-buildx@v3
-        with:
-          buildx-version: latest
-          qemu-version: latest
-          
+      - uses: actions/setup-node@v1
+
+      - name: Bump upstream version
+        run: sed -i "s/        - UPSTREAM_VERSION=.*/        - UPSTREAM_VERSION=${{  github.event.client_payload.tag }}/g" docker-compose.yml
+
       - name: dappnodesdk publish
-        id: dappnodesdk-publish
-        run: |
-          sed -i "s/        - UPSTREAM_VERSION=.*/        - UPSTREAM_VERSION=${{ steps.dispatch-event.outputs.TAG }}/g" docker-compose.yml
-          npx @dappnode/dappnodesdk publish patch --dappnode_team_preset --timeout 2h
+        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset --timeout 2h
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEVELOPER_ADDRESS: "0xf35960302a07022aba880dffaec2fdd64d5bf1c1"
 
       - name: Commit changes
         run: |
-            git config --global user.email "eduadiez@gmail.com"
-            git config --global user.name "Eduardo"
-            git commit -am "Github action bumped version to ${{ steps.dispatch-event.outputs.TAG }}"
-            git push
+          git config --global user.email "eduadiez@gmail.com"
+          git config --global user.name "Eduardo"
+          git commit -am "Bumped upstream version to ${{  github.event.client_payload.tag }} and released"
+          git push
