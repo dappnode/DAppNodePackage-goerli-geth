@@ -12,12 +12,13 @@ jobs:
       DISPATCH_REPO: dappnode/DAppNodePackage-goerli-geth
       UPSTREAM_REPO: ethereum/go-ethereum
     steps:
+    - uses: actions/checkout@v2
     - name: Get the tag
       id: get_tag
       run: |
         UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/releases/latest | jq .tag_name | tr -d "\"" )
-        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/tags/$UPSTREAM_TAG | jq .tag_name | tr -d "\"" )
-        if [ $UPSTREAM_TAG != $DNP_TAG ];then
+        DNP_UPSTREAM=$(cat dappnode_package.json | jq .upstreamVersion | tr -d "\"" )
+        if [ $UPSTREAM_TAG != $DNP_UPSTREAM ];then
             echo "::set-output name=trigger_update::true"
         fi
         echo ::set-output name=TAG::$UPSTREAM_TAG
