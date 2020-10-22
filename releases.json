@@ -46,10 +46,10 @@
     "link": "https://dappnode.github.io/sdk-publish/?r=goerli-geth.dnp.dappnode.eth&v=0.4.7&h=%2Fipfs%2FQmUZL81erfT5uVYSjc46nWQD9TrhA8KLzEeosUgeAyLd5u"
   },
   "0.4.8": {
-    "hash": "/ipfs/QmYSJAeFcVFvxwPYBDU3fzk2MYgt17bZ5kya7JQxebZ62o",
+    "hash": "/ipfs/QmNZDF4ZMztzMjNPrpo2UZKdCFLqnLjxvBoBJQ3mn6HNV1",
     "uploadedTo": {
-      "http://ipfs.dappnode.io": "Thu, 22 Oct 2020 01:38:28 GMT"
+      "http://ipfs.dappnode.io": "Thu, 22 Oct 2020 13:07:53 GMT"
     },
-    "link": "https://dappnode.github.io/sdk-publish/?r=goerli-geth.dnp.dappnode.eth&v=0.4.8&h=%2Fipfs%2FQmYSJAeFcVFvxwPYBDU3fzk2MYgt17bZ5kya7JQxebZ62o"
+    "link": "https://dappnode.github.io/sdk-publish/?r=goerli-geth.dnp.dappnode.eth&v=0.4.8&h=%2Fipfs%2FQmNZDF4ZMztzMjNPrpo2UZKdCFLqnLjxvBoBJQ3mn6HNV1"
   }
 }
