@@ -1,10 +1,12 @@
 name: "Main"
 on:
+  repository_dispatch:
   pull_request:
     paths:
       - "build/**"
   push:
     branches:
+      - "main"
       - "master"
       - "v[0-9]+.[0-9]+.[0-9]+"
     paths:
@@ -15,16 +17,16 @@ jobs:
   build-test:
     runs-on: ubuntu-16.04
     name: Build test
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' || github.event_name == 'repository_dispatch'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: docker-compose build
+      - run: npx @dappnode/dappnodesdk build --provider remote
 
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    if: github.event_name == 'push'  || github.event_name == 'repository_dispatch'
     steps:
       - uses: actions/checkout@v2
       - name: Setup node
