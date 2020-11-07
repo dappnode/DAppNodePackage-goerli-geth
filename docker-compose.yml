@@ -1,19 +1,19 @@
-version: '3.4'
+version: "3.4"
 services:
   goerli-geth.dnp.dappnode.eth:
-    image: 'goerli-geth.dnp.dappnode.eth:0.4.9'
+    image: "goerli-geth.dnp.dappnode.eth:0.4.9"
     build:
       context: ./build
       args:
         - UPSTREAM_VERSION=v1.9.23
     volumes:
-      - 'goerli:/goerli'
+      - "goerli:/goerli"
     ports:
-      - '30303'
+      - "30303"
       - 30303/udp
       - 30304/udp
     restart: always
     environment:
-      - 'EXTRA_OPTS=--rpcapi eth,net,web3,txpool'
+      - "EXTRA_OPTS= --http.api eth,net,web3,txpool"
 volumes:
   goerli: {}
