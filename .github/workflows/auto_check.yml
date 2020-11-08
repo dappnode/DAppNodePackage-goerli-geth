@@ -12,16 +12,28 @@ jobs:
       DISPATCH_REPO: dappnode/DAppNodePackage-goerli-geth
       UPSTREAM_REPO: ethereum/go-ethereum
     steps:
+    - uses: actions/checkout@v2
     - name: Get the tag
       id: get_tag
       run: |
-        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/releases/latest | jq .tag_name | tr -d "\"" )
-        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/tags/$UPSTREAM_TAG | jq .tag_name | tr -d "\"" )
-        if [ $UPSTREAM_TAG != $DNP_TAG ];then
+        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/tags | jq .[0].name | tr -d "\"" )
+        DNP_UPSTREAM=$(cat dappnode_package.json | jq .upstreamVersion | tr -d "\"" )
+        if [ $UPSTREAM_TAG != $DNP_UPSTREAM ];then
             echo "::set-output name=trigger_update::true"
         fi
         echo ::set-output name=TAG::$UPSTREAM_TAG
-    - name: Send dispatch event to the DAppNode Package repository
+
+    - name: update UPSTREAM_VERSION and commit changes
+      if: steps.get_tag.outputs.trigger_update == 'true'
+      run: |
+        sed -i "s/        UPSTREAM_VERSION: .*/        UPSTREAM_VERSION: ${{ steps.get_tag.outputs.TAG }}/g" docker-compose.yml
+        sed -i "s/  \"upstreamVersion\": \".*\",/  \"upstreamVersion\": \"${{ steps.get_tag.outputs.TAG }}\",/g" dappnode_package.json
+        git config --global user.email "eduadiez@gmail.com"
+        git config --global user.name "Eduardo"
+        git commit -am "Github action bumped version to ${{ steps.get_tag.outputs.TAG }}"
+        git push
+        
+    - name: dispacth event
       if: steps.get_tag.outputs.trigger_update == 'true'
       run: |
         curl -v -X POST -u "${{ secrets.PAT_GITHUB }}" \
