@@ -6,6 +6,7 @@
   "description": "Geth version for the Görli Testnet. Görli Testnet is the first proof-of-authority cross-client testnet, synching Parity Ethereum, Geth, Nethermind, Pantheon, and EthereumJS. This testnet is a community-based project, completely open-source, naturally. It was born in September 2018 during ETHBerlin and has been growing in contributors ever since. More info [here](https://goerli.net/). \n\n      .---------.\n      |.-------.|\n      ||>run#  ||\n      ||       ||\n      |'-------'|\n    .-^---------^-.\n    |Görli Testnet|\n    '-------------'\n",
   "type": "library",
   "chain": "ethereum",
+  "dockerTimeout": "5min",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
