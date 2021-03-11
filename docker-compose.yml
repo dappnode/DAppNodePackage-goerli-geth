@@ -14,6 +14,6 @@ services:
       - 30304/udp
     restart: always
     environment:
-      - "EXTRA_OPTS= --http.api eth,net,web3,txpool"
+      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
 volumes:
   goerli: {}
