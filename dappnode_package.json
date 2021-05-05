@@ -1,7 +1,7 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
   "version": "0.4.9",
-  "upstreamVersion": "v1.10.2",
+  "upstreamVersion": "v1.10.3",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "A cross-client PoA testing network for Ethereum",
