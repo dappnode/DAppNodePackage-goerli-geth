@@ -15,5 +15,6 @@ services:
     restart: always
     environment:
       - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
+      - SYNCMODE
 volumes:
   goerli: {}
