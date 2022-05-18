@@ -3,7 +3,7 @@ services:
   goerli-geth.dnp.dappnode.eth:
     image: "goerli-geth.dnp.dappnode.eth:0.4.12"
     build:
-      context: ./build
+      context: .
       args:
         UPSTREAM_VERSION: v1.10.17
     volumes:
