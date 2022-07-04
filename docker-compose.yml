@@ -9,12 +9,12 @@ services:
     volumes:
       - "goerli:/goerli"
     ports:
-      - "30308:30308/tcp"
-      - "30308:30308/udp"
+      - "30353:30353/tcp"
+      - "30353:30353/udp"
     restart: always
     environment:
       - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
-      - P2P_PORT=30308
+      - P2P_PORT=30353
       - SYNCMODE
 volumes:
   goerli: {}
