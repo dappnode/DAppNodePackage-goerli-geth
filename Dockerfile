@@ -17,4 +17,5 @@ ENTRYPOINT geth --datadir /goerli \
     --authrpc.addr 0.0.0.0 \
     --authrpc.port 8551 \
     --authrpc.vhosts "*" \
+    --authrpc.jwtsecret "/jwtsecret" \
     $EXTRA_OPTIONS
