@@ -13,8 +13,8 @@ services:
       - "30353:30353/udp"
     restart: unless-stopped
     environment:
-      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
-      - P2P_PORT=30353
+      - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool"
+      - P2P_PORT: 30353
       - SYNCMODE
 volumes:
   goerli: {}
