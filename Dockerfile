@@ -2,6 +2,8 @@ ARG UPSTREAM_VERSION
 
 FROM ethereum/client-go:${UPSTREAM_VERSION}
 
+COPY jwtsecret.hex /jwtsecret
+
 ENTRYPOINT geth --datadir /goerli \ 
     --goerli \
     --http --http.addr 0.0.0.0 \
