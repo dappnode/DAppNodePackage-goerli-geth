@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: v1.10.20
+        UPSTREAM_VERSION: v1.10.21
     volumes:
       - "goerli:/goerli"
     ports:
@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
     environment:
       - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool"
-      - P2P_PORT: 30353
+      - P2P_PORT=30353
       - SYNCMODE
 volumes:
   goerli: {}
