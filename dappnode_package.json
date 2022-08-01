@@ -18,7 +18,8 @@
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme",
-    "api": "http://goerli-geth.dappnode:8545"
+    "api": "http://goerli-geth.dappnode:8545",
+    "api-engine": "http://goerli-geth.dappnode:8545"
   },
   "repository": {
     "type": "git",
