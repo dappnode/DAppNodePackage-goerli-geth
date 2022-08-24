@@ -1,15 +1,29 @@
 #!/bin/sh
 
-# Check the value of the global env _DAPPNODE_GLOBAL_CONSENSUS_CLIENT
-# It can take as possible values:
-# - empty string
-# - null
-# - "prysm-prater.dnp.dappnode.eth"
-# - "lighthouse-prater.dnp.dappnode.eth"
-# - "teku-prater.dnp.dappnode.eth"
-# - "nimbus-prater.dnp.dappnode.eth"
+case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT" in
+"prysm-prater.dnp.dappnode.eth")
+  echo "Using prysm-prater.dnp.dappnode.eth"
+  JWT_PATH="/security/prysm/jwtsecret.hex"
+  ;;
+"lighthouse-prater.dnp.dappnode.eth")
+  echo "Using lighthouse-prater.dnp.dappnode.eth"
+  JWT_PATH="/security/lighthouse/jwtsecret.hex"
+  ;;
+"teku-prater.dnp.dappnode.eth")
+  echo "Using teku-prater.dnp.dappnode.eth"
+  JWT_PATH="/security/teku/jwtsecret.hex"
+  ;;
+"nimbus-prater.dnp.dappnode.eth")
+  echo "Using nimbus-prater.dnp.dappnode.eth"
+  JWT_PATH="/security/nimbus/jwtsecret.hex"
+  ;;
+*)
+  echo "Using default"
+  JWT_PATH="/security/default/jwtsecret.hex"
+  ;;
+esac
 
-echo $_DAPPNODE_GLOBAL_CONSENSUS_CLIENT
+curl
 
 geth --datadir /goerli --goerli \
   --http --http.addr 0.0.0.0 \
@@ -25,5 +39,5 @@ geth --datadir /goerli --goerli \
   --authrpc.addr 0.0.0.0 \
   --authrpc.port 8551 \
   --authrpc.vhosts "*" \
-  --authrpc.jwtsecret "/jwtsecret" \
+  --authrpc.jwtsecret ${JWT_PATH} \
   $EXTRA_OPTION
