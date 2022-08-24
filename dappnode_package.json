@@ -28,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth/issues"
   },
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "globalEnvs": [{ "envs": ["_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_PRATER"], "services": ["goerli-geth.dnp.dappnode.eth"] }]
 }
