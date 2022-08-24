@@ -23,9 +23,11 @@ case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT" in
   ;;
 esac
 
-curl
+# Print the jwt to the dappmanager
+JWT=$(cat $JWT_PATH)
+curl -X POST "http://my.dappnode/data-send?key=jwt&data=${JWT}"
 
-geth --datadir /goerli --goerli \
+exec geth --datadir /goerli --goerli \
   --http --http.addr 0.0.0.0 \
   --http.corsdomain "*" \
   --http.vhosts "*" \
