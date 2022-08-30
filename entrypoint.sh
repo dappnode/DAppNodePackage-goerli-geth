@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT" in
+case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_PRATER" in
 "prysm-prater.dnp.dappnode.eth")
   echo "Using prysm-prater.dnp.dappnode.eth"
   JWT_PATH="/security/prysm/jwtsecret.hex"
