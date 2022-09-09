@@ -29,5 +29,8 @@
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth/issues"
   },
   "license": "GPL-3.0",
-  "globalEnvs": [{ "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["goerli-geth.dnp.dappnode.eth"] }]
+  "globalEnvs": [{ "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["goerli-geth.dnp.dappnode.eth"] }],
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.58"
+  },
 }
