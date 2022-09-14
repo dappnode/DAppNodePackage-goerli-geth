@@ -1,7 +1,7 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
   "version": "0.4.12",
-  "upstreamVersion": "v1.10.23",
+  "upstreamVersion": "v1.10.24",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "A cross-client PoA testing network for Ethereum",
@@ -29,8 +29,13 @@
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth/issues"
   },
   "license": "GPL-3.0",
-  "globalEnvs": [{ "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["goerli-geth.dnp.dappnode.eth"] }],
+  "globalEnvs": [
+    {
+      "envs": ["CONSENSUS_CLIENT_PRATER"],
+      "services": ["goerli-geth.dnp.dappnode.eth"]
+    }
+  ],
   "requirements": {
     "minimumDappnodeVersion": "0.2.58"
-  },
+  }
 }
