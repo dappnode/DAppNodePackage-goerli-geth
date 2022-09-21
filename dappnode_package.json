@@ -19,7 +19,7 @@
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme",
     "api": "http://goerli-geth.dappnode:8545",
-    "engineAPI": "http://goerli-geth.dappnode:8511"
+    "engineAPI": "http://goerli-geth.dappnode:8551"
   },
   "repository": {
     "type": "git",
