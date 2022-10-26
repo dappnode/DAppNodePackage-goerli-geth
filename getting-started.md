@@ -1,10 +1,10 @@
 ## Goerli Geth (Execution Client)
 
-Goerli is now ready for the merge!
+Welcome to your Merged Goerli/Prater Geth Execution Layer Client
 
 There are now two RPC APIs in Execution Clients:
 
-1. Querying API `http://goerli-geth.dappnode:8545`. Use this endpoint to query transactions on your node and connect your web3 wallet.
-2. Engine API `http//goerli-geth.dappnode:8551`. Use this enpoint to connect your Beacon Chain (Consensus Layer) client.
+1. Querying API `http://goerli-geth.dappnode:8545`. Use this endpoint to query transactions on your node and connect to it with your web3 wallet.
+2. Engine API `http://goerli-geth.dappnode:8551`. Use this endpoint to connect your Beacon Chain (Consensus Layer) client.
 
-After the merge, if your Execution Client is not connected to a Consensus Layer client, you won't be able to use it to query the blockchain, nor will you be able to connect your wallet to it!
+If your Execution Client is not connected to a Consensus Layer client, you won't be able to keep it synced, nor use it to query the blockchain, nor will you be able to connect your wallet to it!
