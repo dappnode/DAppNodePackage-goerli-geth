@@ -19,7 +19,7 @@ jobs:
       - run: npx @dappnode/dappnodesdk build --skip_save
 
   e2e-test:
-    runs-on: packages
+    runs-on: prater
     needs: build-test
     if: github.event_name != 'push'
     name: End to end tests
