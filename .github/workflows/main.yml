@@ -18,6 +18,15 @@ jobs:
       - uses: actions/checkout@v2
       - run: npx @dappnode/dappnodesdk build --skip_save
 
+  e2e-test:
+    runs-on: prater
+    needs: build-test
+    if: github.event_name != 'push'
+    name: End to end tests
+    steps:
+      - uses: actions/checkout@v2
+      - run: npx @dappnode/dappnodesdk@latest github-action test-end-to-end --errorLogsTimeout 120 --healthCheckUrl http://goerli-geth.dappnode:8545 --network prater
+
   release:
     name: Release
     runs-on: ubuntu-latest
