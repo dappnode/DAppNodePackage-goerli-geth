@@ -15,7 +15,7 @@ jobs:
     name: Build test
     if: github.event_name != 'push'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npx @dappnode/dappnodesdk build --skip_save
 
   e2e-test:
@@ -24,7 +24,7 @@ jobs:
     if: github.event_name != 'push'
     name: End to end tests
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npx @dappnode/dappnodesdk@latest github-action test-end-to-end --errorLogsTimeout 120 --healthCheckUrl http://goerli-geth.dappnode:8545 --network prater
         env:
           VALIDATOR_INDEX: ${{ secrets.PRATER_VALIDATOR_INDEX }}
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Publish
         run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
         env:
