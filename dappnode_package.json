@@ -1,7 +1,7 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
-  "version": "0.4.32",
-  "upstreamVersion": "v1.12.0",
+  "version": "0.4.33",
+  "upstreamVersion": "v1.12.1",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Goerli is an Ethereum testnet merged with the Prater Beacon Chain",
