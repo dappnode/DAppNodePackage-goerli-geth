@@ -14,7 +14,16 @@ services:
     restart: unless-stopped
     environment:
       - "EXTRA_OPTION=--http.api eth,engine,net,web3,txpool"
-      - P2P_PORT=30803
-      - SYNCMODE
+      - GETH_HTTP=true
+      - GETH_HTTP_ADDR=0.0.0.0
+      - GETH_HTTP_CORSDOMAIN=*
+      - GETH_HTTP_VHOSTS=*
+      - GETH_SYNCMODE=snap
+      - GETH_WS=true
+      - GETH_WS_ADDR=0.0.0.0
+      - GETH_PORT=30403
+      - GETH_METRICS=true
+      - GETH_METRICS_ADDR=0.0.0.0
+      - GETH_STATE_SCHEME=path
 volumes:
   goerli: {}
