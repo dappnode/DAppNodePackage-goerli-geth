@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: v1.13.3
+        UPSTREAM_VERSION: v1.13.6
     volumes:
       - "goerli:/goerli"
     ports:
