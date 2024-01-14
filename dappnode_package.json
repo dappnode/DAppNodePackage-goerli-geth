@@ -1,9 +1,11 @@
 {
   "name": "goerli-geth.dnp.dappnode.eth",
-  "version": "0.4.9",
-  "upstreamVersion": "v1.9.24",
-  "shortDescription": "A cross-client PoA testing network for Ethereum",
-  "description": "Geth version for the Görli Testnet. Görli Testnet is the first proof-of-authority cross-client testnet, synching Parity Ethereum, Geth, Nethermind, Pantheon, and EthereumJS. This testnet is a community-based project, completely open-source, naturally. It was born in September 2018 during ETHBerlin and has been growing in contributors ever since. More info [here](https://goerli.net/). \n\n      .---------.\n      |.-------.|\n      ||>run#  ||\n      ||       ||\n      |'-------'|\n    .-^---------^-.\n    |Görli Testnet|\n    '-------------'\n",
+  "version": "0.4.35",
+  "upstreamVersion": "v1.13.3",
+  "upstreamRepo": "ethereum/go-ethereum",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "shortDescription": "Goerli is an Ethereum testnet merged with the Prater Beacon Chain",
+  "description": "Geth version for the Göerli Execution Layer Testnet. Göerli Testnet is a cross-client testnet, syncing, Geth, Nethermind and Erigon. This testnet is a community-based project, completely open-source, naturally. It was born in September 2018 during ETHBerlin and has been growing in contributors ever since. More info [here](https://goerli.net/). \n\n      .---------.\n      |.-------.|\n      ||>run#  ||\n      ||       ||\n      |'-------'|\n    .-^---------^-.\n    |Göerli Testnet|\n    '-------------'\n",
   "type": "library",
   "chain": "ethereum",
   "dockerTimeout": "5min",
@@ -12,23 +14,13 @@
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)"
   ],
-  "categories": [
-    "Developer tools"
-  ],
-  "keywords": [
-    "ethereum",
-    "testnet",
-    "geth",
-    "goerli",
-    "poa"
-  ],
-  "architectures": [
-    "linux/amd64",
-    "linux/arm64"
-  ],
+  "categories": ["Developer tools", "Blockchain"],
+  "keywords": ["ethereum", "testnet", "geth", "goerli", "poa"],
+  "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-goerli-geth#readme",
-    "api": "http://goerli-geth.dappnode:8545"
+    "api": "http://goerli-geth.dappnode:8545",
+    "engineAPI": "http://goerli-geth.dappnode:8551"
   },
   "repository": {
     "type": "git",
@@ -37,5 +29,14 @@
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-goerli-geth/issues"
   },
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "globalEnvs": [
+    {
+      "envs": ["CONSENSUS_CLIENT_PRATER"],
+      "services": ["goerli-geth.dnp.dappnode.eth"]
+    }
+  ],
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.58"
+  }
 }
