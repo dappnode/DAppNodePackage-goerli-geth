@@ -8,12 +8,13 @@
   "description": "Geth version for the Göerli Execution Layer Testnet. Göerli Testnet is a cross-client testnet, syncing, Geth, Nethermind and Erigon. This testnet is a community-based project, completely open-source, naturally. It was born in September 2018 during ETHBerlin and has been growing in contributors ever since. More info [here](https://goerli.net/). \n\n      .---------.\n      |.-------.|\n      ||>run#  ||\n      ||       ||\n      |'-------'|\n    .-^---------^-.\n    |Göerli Testnet|\n    '-------------'\n",
   "type": "library",
   "chain": "ethereum",
+  "dockerTimeout": "5min",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)"
   ],
-  "categories": ["Developer tools"],
+  "categories": ["Developer tools", "Blockchain"],
   "keywords": ["ethereum", "testnet", "geth", "goerli", "poa"],
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
