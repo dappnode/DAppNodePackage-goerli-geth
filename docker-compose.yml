@@ -1,19 +1,19 @@
 version: "3.5"
 services:
   goerli-geth.dnp.dappnode.eth:
-    image: "goerli-geth.dnp.dappnode.eth:0.4.12"
+    image: goerli-geth.dnp.dappnode.eth:0.4.12
     build:
       context: .
       args:
-        UPSTREAM_VERSION: v1.13.14
+        UPSTREAM_VERSION: v1.14.4
     volumes:
-      - "goerli:/goerli"
+      - goerli:/goerli
     ports:
-      - "30803:30803/tcp"
-      - "30803:30803/udp"
+      - 30803:30803/tcp
+      - 30803:30803/udp
     restart: unless-stopped
     environment:
-      - "EXTRA_OPTION=--http.api eth,engine,net,web3,txpool"
+      - EXTRA_OPTION=--http.api eth,engine,net,web3,txpool
       - P2P_PORT=30803
       - SYNCMODE
 volumes:
